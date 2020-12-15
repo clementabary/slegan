@@ -1,0 +1,66 @@
+experiment:
+  name: G-${gen.name}_D-${dis.name}_${dataset.name}_${dataset.params.img_params.size}_${var.type}_${recon_loss.params.type}
+
+defaults:
+  - dataset: oxford_flowers
+  - gen: sle
+  - dis: sle_sn_da
+
+loader:
+  class: th.utils.data.DataLoader
+  params:
+    batch_size: 16
+    num_workers: 2
+    pin_memory: true
+    shuffle: true
+
+gen_opt:
+  class: torch.optim.Adam
+  params:
+    betas:
+      - 0.5
+      - 0.999
+    lr: 2e-4
+    weight_decay: 0
+
+dis_opt:
+  class: torch.optim.Adam
+  params:
+    betas:
+      - 0.5
+      - 0.999
+    lr: 2e-4
+    weight_decay: 0
+
+var:
+  ema: false
+  lambda_recon: 1
+  lambda_gp: null
+  type: "hinge"
+
+recon_loss:
+  class: losses.SelfSupDisReconLoss
+  params:
+    type: mae
+
+adv_loss:
+  class: losses.AdversarialLoss
+  params:
+    type: ${var.type}
+    smooth: false
+
+trainer:
+  fast_dev_run: False
+  gpus: "0"
+  # distributed_backend: dp
+  precision: 32
+  accumulate_grad_batches: 1
+  profiler: False
+  max_epochs: 800
+  show_progress_bar: True
+
+seed: 42
+
+hydra:
+  run:
+      dir: runs/${experiment.name}
