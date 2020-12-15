@@ -1,0 +1,8 @@
+dis:
+  class: networks.discriminator.Discriminator
+  name: sle
+  params:
+    resolution: 1024
+    sn: false
+    p: 0
+    types: []

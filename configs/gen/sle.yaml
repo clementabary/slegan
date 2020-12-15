@@ -1,0 +1,9 @@
+gen:
+  class: networks.generator.Generator
+  name: sle
+  params:
+    resolution: 1024
+    latent_dim: 256
+    fmap_max: 1024
+    noise: false
+    sn: false

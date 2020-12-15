@@ -1,0 +1,11 @@
+dis:
+  class: networks.discriminator.Discriminator
+  name: sle_sn_da
+  params:
+    resolution: 1024
+    sn: true
+    p: 1
+    types:
+      - color
+      - translation
+      - cutout
