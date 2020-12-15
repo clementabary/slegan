@@ -1,0 +1,12 @@
+dataset:
+  name: ffhq_sub
+  class: data.ImageDataset
+  params:
+    path: /home/data/ffhq
+    ext: png
+    img_params:
+      size: 1024
+      rc2cc: 0.
+      hflip: true
+    tensor_params:
+      norm: [[0.5, 0.5, 0.5], [0.5, 0.5, 0.5]]

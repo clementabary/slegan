@@ -1,0 +1,12 @@
+dataset:
+  name: monet
+  class: data.ImageDataset
+  params:
+    path: /home/data/monet_paintings/monet_jpg
+    ext: jpg
+    img_params:
+      size: 256
+      rc2cc: 0.75
+      hflip: true
+    tensor_params:
+      norm: [[0.5, 0.5, 0.5], [0.5, 0.5, 0.5]]
