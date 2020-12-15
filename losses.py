@@ -1,6 +1,6 @@
 import torch as th
 import torch.nn as nn
-import torch.nn.functional as F
+import torch.nn.functional as tnf
 import torch.autograd as ag
 import torchvision
 import lpips
