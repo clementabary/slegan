@@ -1,4 +1,4 @@
-## Few-shot Adversarial Image Synthesis with SLE-GAN
+# Few-shot Adversarial Image Synthesis with SLE-GAN
 
 PyTorch Lightning-based implementation of ICLR2021's "[Towards faster and stabilized GAN training for high-fidelity few-shot image synthesis](https://openreview.net/pdf?id=1Fqg133qRaI)" (unofficial).
 
@@ -29,7 +29,7 @@ The generator needs to compare favorably to StyleGAN2 with latest model configur
 
 ##### First samples
 
-The following grid has been generated at the 65k-th iteration (on a "one day - one P100" basis) with the main configuration as is.
+The following image grid of size 1024 has been generated at the 65k-th iteration (on a "one day - one P100" basis) with the main configuration as is.
 
 ![](samples/flowers_0.png)
 ![](samples/flowers_1.png)
